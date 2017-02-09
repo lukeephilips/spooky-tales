@@ -2,18 +2,13 @@ class TalesController < ApplicationController
 
   def index
     @tales = Tale.all
-    @active_user = current_account
-    @user = current_account
-
   end
 
   def show
     @tale = Tale.find(params[:id])
-    @active_user = @@active_user
   end
   def new
     # @picture = random_pic
-    @active_user = @@active_user
     @tale = Tale.new
   end
   def create
@@ -41,8 +36,7 @@ class TalesController < ApplicationController
   def destroy
     @tale = Tale.find(params[:id])
     @tale.destroy
-    @active_user = @@active_user
-    redirect_to user_path(@active_user)
+    redirect_to account_path(current_account)
   end
 
   private

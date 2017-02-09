@@ -1,0 +1,9 @@
+<h1>Edit profile</h1>
+<%= render 'layouts/errors', :object => current_account %>
+<h1>hey</h1>
+<form method="get">
+  <input name="_method" type="hidden" value="patch">
+  <input type="text" name="name">
+  <input type="text" name="headshot">
+  <button type="submit" name="button">submit</button>
+</form>
