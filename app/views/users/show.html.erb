@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-sm-6">
+    <h1><%= @user.name %></h1>
+    <img class="big-pic" src="<%= @user.headshot %>">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+
+      <% @tales.order(:title).each do |tale| %>
+        <h4> <%= link_to tale.title, tale_path(tale) %> </h4>
+      <% end %>
+
+      <p> <%= link_to "Add Tale", new_tale_path %> </p>
+  </div>
+</div>

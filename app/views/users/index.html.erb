@@ -1,0 +1,9 @@
+<h1>All Users</h1>
+<% @users.each do |user| %>
+  <h3><%= link_to user.name, user_path(user) %></h3>
+  <img class="img-circle headshot-pic"src="<%= user.headshot %>">
+<% end %>
+
+<div class="links">
+  <%= link_to "Add User", new_user_path %>
+</div>

@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="panel panel-danger col-sm-10 col-sm-offset-1">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-sm-9">
+          <h1> <%= @tale.title %> </h1>
+        </div>
+        <div class="col-sm-3">
+          <h5><%= link_to "Edit", edit_tale_path(@tale) %> |
+          <%= link_to "Delete", tale_path(@tale),
+                                :data => {:confirm => "Are you sure?",
+                                          :method => "delete"} %> </h5>
+        </div>
+      </div>
+    </div>
+    <img class="big-pic" src="<%= @tale.picture %>" alt="">
+
+  </div>
+</div>
+<% @tale.contributions.order(:created_at).each do |contribution| %>
+<div class="row">
+  <div class="panel panel-default  col-sm-6 col-sm-offset-3">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-sm-9">
+          <h3> <%= contribution.text %> </h3>
+        </div>
+        <div class="col-sm-3">
+          <h5>By: <%= contribution.account.email %> </h5>
+          <% if current_account == contribution.account %>
+          <h5><%= link_to "Edit", edit_tale_contribution_path(@tale, contribution) %> |
+            <%= link_to "Delete", tale_contribution_path(@tale, contribution),
+            :data => {:confirm => "Are you sure?",
+              :method => "delete"} %></h5>
+              <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <img class="little-pic" src="<%= contribution.image %>" alt=" <%= contribution.image %> " />
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<p> <%= link_to "Add Contributions", new_tale_contribution_path(@tale) %> </p>

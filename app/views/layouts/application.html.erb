@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpookyTales</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Spooky Tales</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="authentication">
+      <% if account_signed_in? %>Logged in as <strong><%= current_account.email %></strong>.
+        <%= link_to 'Edit profile', edit_account_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Logout", destroy_account_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "Sign up", new_account_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Login", new_account_session_path, :class => 'navbar-link'  %>
+      <% end %>
+    </div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+  </body>
+</html>
