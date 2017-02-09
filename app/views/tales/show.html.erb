@@ -4,6 +4,7 @@
       <div class="row">
         <div class="col-sm-9">
           <h1> <%= @tale.title %> </h1>
+          <h5> <%= @tale.score %> </h5>
         </div>
         <div class="col-sm-3">
           <h5><%= link_to "Edit", edit_tale_path(@tale) %> |
@@ -13,8 +14,11 @@
         </div>
       </div>
     </div>
-    <img class="big-pic" src="<%= @tale.picture %>" alt="">
+    <%= link_to "", tale_up_vote_path(@tale), class: "glyphicon glyphicon-thumbs-up"%>
+    <%= link_to "", tale_down_vote_path(@tale), class: "glyphicon glyphicon-thumbs-down" %>
 
+
+    <img class="big-pic" src="<%= @tale.picture %>" alt="">
   </div>
 </div>
 <% @tale.contributions.order(:created_at).each do |contribution| %>

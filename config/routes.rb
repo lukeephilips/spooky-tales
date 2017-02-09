@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :contributions
   end
   resources :tales do
+    get '/up_vote', :to => 'tales#up_vote'
+    get '/down_vote', :to => 'tales#down_vote'
+
     resources :contributions
   end
 end
