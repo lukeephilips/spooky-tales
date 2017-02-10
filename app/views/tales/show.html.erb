@@ -4,23 +4,26 @@
       <div class="row">
         <div class="col-sm-9">
           <h1> <%= @tale.title %> </h1>
-          <h5> <%= @tale.score %> </h5>
+          <h5 style="font-size: 2em"> <%= link_to "", tale_up_vote_path(@tale), class: "glyphicon glyphicon-thumbs-up"%>
+          <%= link_to "", tale_down_vote_path(@tale), class: "glyphicon glyphicon-thumbs-down" %> | Score: <%= @tale.score %> </h5>
+
         </div>
         <div class="col-sm-3">
           <h5><%= link_to "Edit", edit_tale_path(@tale) %> |
           <%= link_to "Delete", tale_path(@tale),
                                 :data => {:confirm => "Are you sure?",
                                           :method => "delete"} %> </h5>
+          <%= link_to "Add Contribution", new_tale_contribution_path(@tale), class: "btn btn-danger btn-sm" %>
+
         </div>
       </div>
     </div>
-    <%= link_to "", tale_up_vote_path(@tale), class: "glyphicon glyphicon-thumbs-up"%>
-    <%= link_to "", tale_down_vote_path(@tale), class: "glyphicon glyphicon-thumbs-down" %>
 
 
     <img class="big-pic" src="<%= @tale.picture %>" alt="">
   </div>
 </div>
+
 <% @tale.contributions.order(:created_at).each do |contribution| %>
 <div class="row">
   <div class="panel panel-default  col-sm-6 col-sm-offset-3">
@@ -47,5 +50,6 @@
     </div>
   </div>
 <% end %>
-
-<p> <%= link_to "Add Contributions", new_tale_contribution_path(@tale) %> </p>
+<div class="col-sm-3 col-sm-offset-4">
+  <%= link_to "Add Contribution", new_tale_contribution_path(@tale), class: "btn btn-danger btn-lg center-block" %>
+</div>

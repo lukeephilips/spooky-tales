@@ -38,7 +38,6 @@ class TalesController < ApplicationController
   end
 
   def update
-    binding.pry
     @tale = Tale.find(params[:id])
     if @tale.update(tale_params)
       redirect_to tale_path(@tale)
