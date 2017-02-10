@@ -9,7 +9,7 @@
           <h4> <%= link_to tale.title, tale_path(tale) %> </h4>
           <h6> <%= tale.score %> </h6>
         <% end %>
-        <%= button_to "Add Tale", new_tale_path, class: "btn btn-danger btn-lg" %>
+        <%= link_to "Add Tale", new_tale_path, class: "btn btn-danger btn-lg" %>
     </div>
   </div>
 </div>
