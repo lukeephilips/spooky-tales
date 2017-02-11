@@ -5,9 +5,19 @@
   </div>
   <div class="panel-body">
     <div class="stuff">
+      <hr>
         <% @tales.order(score: :desc).each do |tale| %>
+        <div class="row">
+
+        <div class="col-sm-3">
+          <img src="<%= tale.picture %>" class="tiny-pic">
+        </div>
+        <div class="col-sm-9">
           <h4> <%= link_to tale.title, tale_path(tale) %> </h4>
-          <h6> <%= tale.score %> </h6>
+          <h6>Score: <%= tale.score %> </h6>
+        </div>
+      </div>
+      <hr>
         <% end %>
         <%= link_to "Add Tale", new_tale_path, class: "btn btn-danger btn-lg" %>
     </div>

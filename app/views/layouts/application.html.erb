@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
   <head>
     <title>SpookyTales</title>
@@ -10,7 +10,7 @@
 
   <body>
     <div class="navbar">
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -24,7 +24,7 @@
           </div>
           <div class="navbar-text navbar-right">
             <% if account_signed_in? %>Logged in as <strong><%= current_account.name %></strong>
-            <img class="super-tiny-pic img-circle center-block" src="<%= current_account.headshot %>">
+            <!-- <img class="super-tiny-pic img-circle center-block" src="<%= current_account.headshot %>"> -->
             <%= link_to 'Edit profile', edit_account_registration_path, :class => 'navbar-link' %> |
             <%= link_to "Logout", destroy_account_session_path, method: :delete, :class => 'navbar-link'  %>
             <% else %>
@@ -38,7 +38,7 @@
     <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <%= yield %>
+        <%= yield %>
     </div>
   </body>
 </html>

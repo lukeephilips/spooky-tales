@@ -79,9 +79,13 @@ html {
 }
 
 .container {
-  padding: 0px;
-  background: inherit;
+  border-radius: 1%;
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.5);
 }
 .stuff{
-  margin-left: 25%;
+  margin-left: 5%;
+}
+.field {
+  width: 200px;
 }
