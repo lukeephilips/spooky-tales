@@ -16,6 +16,7 @@ class TalesController < ApplicationController
 
   def index
     @tales = Tale.all
+    @search
   end
 
   def show

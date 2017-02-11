@@ -5,3 +5,9 @@ module ApplicationHelper
     pictures.sample
   end
 end
+
+def search_filter(filter)
+  unless (filter ='')
+    @tales = Contribution.search(filter)
+  end
+end
