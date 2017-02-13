@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sppoky Tales is a crowdsourced spooky story generator. Users can login and contribute their own sentance to each tale, or create their own. It uses ActiveRecord and Devise authentication to allow users to save and modify content.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To download:
+* git clone
+* bundle install
+* run rake db:setup
