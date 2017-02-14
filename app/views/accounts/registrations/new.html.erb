@@ -13,12 +13,16 @@
     <%= f.text_field :name, autofocus: true, class: 'form-control' %>
   </div>
 
-  <div class="well">
+  <!-- <div class="well">
     <%= f.label :headshot %><br />
     <% pick_a_face.each do |f| %>
     <%= radio_button_tag(:headshot, "headshots/#{f.to_s}") %>
     <%= image_tag "headshots/#{f}", class: "super-tiny-pic img-circle"%>
     <% end %>
+  </div> -->
+  <div class="field">
+    <%= f.label "Replace the image URL for your headshot" %><br />
+    <%= f.text_field :headshot, autofocus: true, value: "http://i49.photobucket.com/albums/f262/idolbaby/GPTV_Chicken_Little.jpg?t=1193105429", class: 'form-control' %>
   </div>
 
   <div class="field">
