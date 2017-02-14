@@ -50,7 +50,7 @@ class TalesController < ApplicationController
   def destroy
     @tale = Tale.find(params[:id])
     @tale.destroy
-    redirect_to account_path(current_account)
+    redirect_to tales_path
   end
 
   private

@@ -13,9 +13,12 @@
     <%= f.text_field :name, autofocus: true, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="well">
     <%= f.label :headshot %><br />
-    <%= f.text_field :headshot, autofocus: true, class: 'form-control' %>
+    <% pick_a_face.each do |f| %>
+    <%= radio_button_tag(:headshot, "headshots/#{f.to_s}") %>
+    <%= image_tag "headshots/#{f}", class: "super-tiny-pic img-circle"%>
+    <% end %>
   </div>
 
   <div class="field">

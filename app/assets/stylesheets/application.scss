@@ -24,43 +24,49 @@ body {
 html {
   height: 100%;
 }
+* {
+  color: white;
+}
+a {
+  color: darkblue;
+}
 .container{
   background: white;
-  height: 100%;
+  height: contain;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
 }
 .big-pic {
-  // height: 500px;
-  // display: block;
-  // margin-left: auto;
-  // margin-right: auto;
   width: 100%;
 
 }
 .little-pic {
-  // height: 250px;
   width: 100%;
 }
 .tiny-pic {
   // height: 250px;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 .super-tiny-pic {
   // height: 250px;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
+}
+.headshot-pic {
+  height: 100px;
+  width: 100px;
+  border: black solid 1px;
 }
 .panel{
   padding:0;
 }
+.panel-heading{
+  background-color: maroon;
+  color: white;
+}
 .panel-body {
   padding: 0;
-}
-
-.headshot-pic {
-  height: 150px;
-  width: 150px;
-  border: black solid 1px;
 }
 
 .well {
@@ -70,7 +76,7 @@ html {
   color: green;
 }
 .glyphicon-thumbs-down{
-  color: darkred;
+  color: red;
 }
 
 .alert, .notice {
@@ -81,7 +87,7 @@ html {
 .container {
   border-radius: 1%;
   background-color: #fff;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(0,0,0,0.5);
 }
 .stuff{
   margin-left: 5%;

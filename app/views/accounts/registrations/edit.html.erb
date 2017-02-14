@@ -36,9 +36,12 @@
     <%= f.text_field :name, autofocus: true, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="well">
     <%= f.label :headshot %><br />
-    <%= f.text_field :headshot, autofocus: true, class: 'form-control' %>
+    <% pick_a_face.each do |f| %>
+    <%= radio_button_tag(:headshot, "headshots/#{f.to_s}") %>
+    <%= image_tag "headshots/#{f}", class: "super-tiny-pic img-circle"%>
+    <% end %>
   </div>
 
 
@@ -46,9 +49,5 @@
     <%= f.submit "Update", class: 'btn btn-danger' %>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>

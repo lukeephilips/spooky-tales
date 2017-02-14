@@ -1,13 +1,13 @@
 <div class="col-sm-9">
   <%= render 'layouts/errors', :object => @tale %>
-
-  <img class="big-pic" src="<%= thing = random_pic %>">
+  <!-- <img class="big-pic" src="<%= thing = random_pic %>"> -->
   <%= form_for @tale do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-
-    <%= f.label 'Replace picture URL if this is too scary' %>
-    <%= f.text_field :picture, :value => thing, class: 'form-control' %>
+    <%= f.hidden_field :picture, :value => thing = "spooks/#{random_pic}", class: 'form-control' %>
+    <%= image_tag thing, class: "big-pic" %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
 
     <%= f.submit  class: 'btn btn-danger'%>
   <% end %>

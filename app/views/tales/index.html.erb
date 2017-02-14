@@ -1,26 +1,20 @@
-
-<div class="panel panel-primary col-sm-6 col-sm-offset-3">
-  <div class="panel-heading">
-      <h3>Click a tale to make your contribution</h3>
-  </div>
-  <div class="panel-body">
+<div class="col-sm-6 col-sm-offset-3">
+      <h3>Spooky Tales is a crowdsourced random story generator. Click a tale to view, or log in to contribute.</h3>
     <div class="stuff">
       <hr>
         <% @tales.order(score: :desc).each do |tale| %>
         <div class="row">
-
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <img src="<%= tale.picture %>" class="tiny-pic">
         </div>
-        <div class="col-sm-9">
-          <h4> <%= link_to tale.title, tale_path(tale) %> </h4>
-          <h6>Score: <%= tale.score %> </h6>
+        <div class="col-sm-8">
+          <h3> <%= link_to tale.title, tale_path(tale) %> </h3>
+          <h4>Contributions: <%= tale.contributions.length %> <br>
+            Score: <%= tale.score %> </h4>
         </div>
       </div>
       <hr>
         <% end %>
         <%= link_to "Add Tale", new_tale_path, class: "btn btn-danger btn-lg" %>
-        <%= text_field, :search %>
     </div>
-  </div>
 </div>
